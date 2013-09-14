@@ -25,7 +25,7 @@ $array_copy = array(
 "flash.js"
 );
 
-//ミニファイ対象のファイル郡
+//ミニファイ対象のファイル群
 
 $array_mini = array(
 
@@ -37,7 +37,8 @@ $array_mini = array(
 "plugins/kag/kag.tag.js",
 "plugins/kag/kag.tag_audio.js",
 "plugins/kag/kag.tag_ext.js",
-"plugins/kag/kag.tag_system.js"
+"plugins/kag/kag.tag_system.js",
+"plugins/kag/kag.key_mouse.js"
 
 );
 
@@ -61,7 +62,7 @@ foreach($array_copy as $file){
 
 
 //imageディレクトリのコピー
-	exec("cp -R ../tyrano/images/ ".$dirname."/tyrano/");
+	exec("cp -R ../tyrano/images/ ".$dirname."/tyrano/images/");
 
 //オリジナルマスターデータのコピー	
 	exec("cp -R ./master_tyrano/data ".$dirname."/data/");
