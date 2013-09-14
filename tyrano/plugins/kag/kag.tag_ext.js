@@ -1162,14 +1162,19 @@ tyrano.plugin.kag.tag.chara_show ={
         if(pm.wait!="true"){
             this.kag.ftag.nextOrder();
         }
-        
+
+        var actualTime = pm.time;
+        if (that.kag.stat.is_skip) {
+            actualTime /= 10;
+        }
+
         //アニメーションでj表示させます
         img_obj.animate(
                 {
                     opacity:"show"
                 },
                 {
-                    duration: pm.time, 
+                    duration: actualTime,
                     easing:that.kag.stat.chara_effect,
                     complete: function(){
                         
@@ -1237,14 +1242,20 @@ tyrano.plugin.kag.tag.chara_hide ={
         
         var chara_num = 0;
         that.kag.layer.hideEventLayer();
- 
+
+
+        var actualTime = pm.time;
+        if (that.kag.stat.is_skip) {
+            actualTime /= 10;
+        }
+
         //アニメーションでj表示させます
         img_obj.animate(
                 {
                     opacity:"hide"
                 },
                 {
-                    duration: pm.time, 
+                    duration: actualTime,
                     easing: "linear",
                     complete: function(){
                         
