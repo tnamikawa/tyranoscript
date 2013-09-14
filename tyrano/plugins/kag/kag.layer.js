@@ -386,6 +386,19 @@ tyrano.plugin.kag.layer ={
     
     test:function(){
         
+    },
+
+    // 透明度を復元する
+    resetOpacity: function() {
+        var key;
+        for (key in this.map_layer_back) {
+            this.map_layer_back[key].css('opacity', '1.0');
+        }
+        for (key in this.map_layer_fore) {
+            this.map_layer_fore[key].css('opacity', '1.0');
+        }
+        $('.base_back').css('opacity', 1.0);
+        $('.base_fore').css('opacity', 1.0);
     }
 };
 

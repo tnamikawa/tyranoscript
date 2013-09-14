@@ -314,6 +314,7 @@ tyrano.plugin.kag.menu ={
        
         //layerの復元
         this.kag.layer.setLayerHtml(data.layer);
+        this.kag.layer.resetOpacity();
         
         //その他ステータスの設定
         this.kag.stat = data.stat;
