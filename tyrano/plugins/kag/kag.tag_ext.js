@@ -1226,7 +1226,7 @@ tyrano.plugin.kag.tag.chara_hide ={
         page:"fore",
         layer:"0",//レイヤーデフォルトは０に追加
         name:"",
-        wait:"false",
+        wait:"true",
         time:1000
         
     },
@@ -1320,7 +1320,12 @@ tyrano.plugin.kag.tag.chara_hide ={
                             //that.kag.ftag.nextOrder();
                             
                         }
-                    }//end complerte
+
+                        if(pm.wait=="true"){
+                            that.kag.ftag.nextOrder();
+                        }
+
+                    }//end complete
                 }
        ); // end animate
        
