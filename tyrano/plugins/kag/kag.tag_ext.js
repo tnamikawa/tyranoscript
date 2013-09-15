@@ -1390,6 +1390,8 @@ tyrano.plugin.kag.tag.chara_delete ={
 :param
 name=[chara_new]で定義したname属性を指定してください。,
 storage=変更する画像ファイルを指定してください。ファイルはプロジェクトフォルダのfgimageフォルダに配置します。
+width=画像の横幅を指定できます,
+height=画像の高さを指定できます。,
 
 #[end]
 */
@@ -1401,14 +1403,22 @@ tyrano.plugin.kag.tag.chara_mod ={
     pm:{
         
         name:"",
-        storage:"" 
+        storage:"",
+        width:"",
+        height:""
         
     },
     
     start:function(pm){
        
-       $("."+pm.name).attr("src","./data/fgimage/"+pm.storage);
-       
+        $("."+pm.name).attr("src","./data/fgimage/"+pm.storage);
+        if ("" !== pm.width) {
+            $("."+pm.name).attr("width",pm.width);
+        }
+        if ("" !== pm.height) {
+            $("."+pm.name).attr("height",pm.height);
+        }
+
        this.kag.ftag.nextOrder();
         
     }
